@@ -1,14 +1,14 @@
-%define		kdeappsver	20.12.3
+%define		kdeappsver	21.04.0
 %define		qtver		5.9.0
 %define		kaname		libkdegames
 Summary:	Libkdegames
 Name:		ka5-%{kaname}
-Version:	20.12.3
+Version:	21.04.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	bfe2fbc97e69b5d161f05bb4c05b77db
+# Source0-md5:	d219368e193469aec87ab8fc97da0b42
 URL:		http://www.kde.org/
 BuildRequires:	OpenAL-devel
 BuildRequires:	Qt5Core-devel
@@ -97,9 +97,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%attr(755,root,root) %ghost %{_libdir}/libKF5KDEGames.so.7
+%ghost %{_libdir}/libKF5KDEGames.so.7
 %attr(755,root,root) %{_libdir}/libKF5KDEGames.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libKF5KDEGamesPrivate.so.1
+%ghost %{_libdir}/libKF5KDEGamesPrivate.so.7
 %attr(755,root,root) %{_libdir}/libKF5KDEGamesPrivate.so.*.*.*
 %{_libdir}/qt5/qml/org/kde/games/core/KgItem.qml
 %dir %{_libdir}/qt5/qml/org/kde/games
@@ -114,5 +114,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %{_includedir}/KF5/KF5KDEGames
 %{_libdir}/cmake/KF5KDEGames
-%attr(755,root,root) %{_libdir}/libKF5KDEGames.so
-%attr(755,root,root) %{_libdir}/libKF5KDEGamesPrivate.so
+%{_libdir}/libKF5KDEGames.so
+%{_libdir}/libKF5KDEGamesPrivate.so
