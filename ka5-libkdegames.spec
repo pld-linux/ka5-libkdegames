@@ -1,14 +1,14 @@
-%define		kdeappsver	21.04.0
+%define		kdeappsver	21.04.1
 %define		qtver		5.9.0
 %define		kaname		libkdegames
 Summary:	Libkdegames
 Name:		ka5-%{kaname}
-Version:	21.04.0
+Version:	21.04.1
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	d219368e193469aec87ab8fc97da0b42
+# Source0-md5:	33099925a8b8682b9887141d8bcf43cf
 URL:		http://www.kde.org/
 BuildRequires:	OpenAL-devel
 BuildRequires:	Qt5Core-devel
