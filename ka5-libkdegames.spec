@@ -58,6 +58,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Base library common to many KDE games.
 
+%description -l pl.UTF-8
+Bazowa biblioteka wspólna dla wielu gier KDE.
+
 %package devel
 Summary:	Header files for %{kaname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kaname}
