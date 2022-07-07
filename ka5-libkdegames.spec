@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	22.04.2
-%define		qtver		5.9.0
+%define		kdeappsver	22.04.3
+%define		qtver		5.15.2
 %define		kaname		libkdegames
 Summary:	Libkdegames
 Name:		ka5-%{kaname}
-Version:	22.04.2
+Version:	22.04.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	1746499dd89e7a2844f4137f1dfbad3d
+# Source0-md5:	45ea973a91560973a993a0085ceb36b9
 URL:		http://www.kde.org/
 BuildRequires:	OpenAL-devel
 BuildRequires:	Qt5Core-devel
