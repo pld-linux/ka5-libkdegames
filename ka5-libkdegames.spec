@@ -1,17 +1,17 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	23.04.3
+%define		kdeappsver	23.08.0
 %define		qtver		5.15.2
 %define		kaname		libkdegames
 Summary:	Libkdegames
 Name:		ka5-%{kaname}
-Version:	23.04.3
+Version:	23.08.0
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	39094ce6f6dea2721c6a04c3a306193a
+# Source0-md5:	81e269c07a2604a9ad0d6f48e99d3b87
 URL:		http://www.kde.org/
 BuildRequires:	OpenAL-devel
 BuildRequires:	Qt5Core-devel
@@ -23,7 +23,7 @@ BuildRequires:	Qt5Quick-devel
 BuildRequires:	Qt5Svg-devel
 BuildRequires:	Qt5Test-devel
 BuildRequires:	Qt5Widgets-devel
-BuildRequires:	cmake >= 2.8.12
+BuildRequires:	cmake >= 3.20
 BuildRequires:	gettext-devel
 BuildRequires:	kf5-extra-cmake-modules >= 5.53.0
 BuildRequires:	kf5-karchive-devel
@@ -80,18 +80,16 @@ Pliki nagłówkowe dla programistów używających %{kaname}.
 %setup -q -n %{kaname}-%{version}
 
 %build
-install -d build
-cd build
 %cmake \
+	-B build \
 	-G Ninja \
 	%{!?with_tests:-DBUILD_TESTING=OFF} \
 	-DHTML_INSTALL_DIR=%{_kdedocdir} \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
-	..
-%ninja_build
+	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON
+%ninja_build -C build
 
 %if %{with tests}
-ctest
+ctest --test-dir build
 %endif
 
 
