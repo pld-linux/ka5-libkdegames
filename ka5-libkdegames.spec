@@ -1,57 +1,57 @@
 #
 # Conditional build:
 %bcond_with	tests		# build with tests
-%define		kdeappsver	24.01.95
+%define		kdeappsver	23.08.4
 %define		qtver		5.15.2
 %define		kaname		libkdegames
 Summary:	Libkdegames
 Name:		ka5-%{kaname}
-Version:	24.01.95
-Release:	0.1
+Version:	23.08.4
+Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	https://download.kde.org/unstable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	dd29230942b39fddd449f9f2fe130a6a
+Source0:	https://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	0e4e582f2e4bb99de03a92365b8f9a9b
 URL:		http://www.kde.org/
 BuildRequires:	OpenAL-devel
-BuildRequires:	Qt6Core-devel
-BuildRequires:	Qt6Core-devel >= %{qtver}
-BuildRequires:	Qt6Gui-devel >= 5.11.1
-BuildRequires:	Qt6Network-devel >= 5.11.1
-BuildRequires:	Qt6Qml-devel
-BuildRequires:	Qt6Quick-devel
-BuildRequires:	Qt6Svg-devel
-BuildRequires:	Qt6Test-devel
-BuildRequires:	Qt6Widgets-devel
+BuildRequires:	Qt5Core-devel
+BuildRequires:	Qt5Core-devel >= %{qtver}
+BuildRequires:	Qt5Gui-devel >= 5.11.1
+BuildRequires:	Qt5Network-devel >= 5.11.1
+BuildRequires:	Qt5Qml-devel
+BuildRequires:	Qt5Quick-devel
+BuildRequires:	Qt5Svg-devel
+BuildRequires:	Qt5Test-devel
+BuildRequires:	Qt5Widgets-devel
 BuildRequires:	cmake >= 3.20
 BuildRequires:	gettext-devel
-BuildRequires:	kf6-extra-cmake-modules >= 5.53.0
-BuildRequires:	kf6-karchive-devel
-BuildRequires:	kf6-kbookmarks-devel
-BuildRequires:	kf6-kcodecs-devel
-BuildRequires:	kf6-kcompletion-devel
-BuildRequires:	kf6-kconfig-devel
-BuildRequires:	kf6-kconfigwidgets-devel
-BuildRequires:	kf6-kcoreaddons-devel
-BuildRequires:	kf6-kcrash-devel
-BuildRequires:	kf6-kdbusaddons-devel
-BuildRequires:	kf6-kdeclarative-devel
-BuildRequires:	kf6-kdnssd-devel
-BuildRequires:	kf6-kglobalaccel-devel
-BuildRequires:	kf6-kguiaddons-devel
-BuildRequires:	kf6-ki18n-devel
-BuildRequires:	kf6-kiconthemes-devel
-BuildRequires:	kf6-kio-devel
-BuildRequires:	kf6-kitemviews-devel
-BuildRequires:	kf6-kjobwidgets-devel
-BuildRequires:	kf6-knewstuff-devel
-BuildRequires:	kf6-kservice-devel
-BuildRequires:	kf6-ktextwidgets-devel
-BuildRequires:	kf6-kwidgetsaddons-devel
-BuildRequires:	kf6-kxmlgui-devel
+BuildRequires:	kf5-extra-cmake-modules >= 5.53.0
+BuildRequires:	kf5-karchive-devel
+BuildRequires:	kf5-kbookmarks-devel
+BuildRequires:	kf5-kcodecs-devel
+BuildRequires:	kf5-kcompletion-devel
+BuildRequires:	kf5-kconfig-devel
+BuildRequires:	kf5-kconfigwidgets-devel
+BuildRequires:	kf5-kcoreaddons-devel
+BuildRequires:	kf5-kcrash-devel
+BuildRequires:	kf5-kdbusaddons-devel
+BuildRequires:	kf5-kdeclarative-devel
+BuildRequires:	kf5-kdnssd-devel
+BuildRequires:	kf5-kglobalaccel-devel
+BuildRequires:	kf5-kguiaddons-devel
+BuildRequires:	kf5-ki18n-devel
+BuildRequires:	kf5-kiconthemes-devel
+BuildRequires:	kf5-kio-devel
+BuildRequires:	kf5-kitemviews-devel
+BuildRequires:	kf5-kjobwidgets-devel
+BuildRequires:	kf5-knewstuff-devel
+BuildRequires:	kf5-kservice-devel
+BuildRequires:	kf5-ktextwidgets-devel
+BuildRequires:	kf5-kwidgetsaddons-devel
+BuildRequires:	kf5-kxmlgui-devel
 BuildRequires:	libsndfile-devel
 BuildRequires:	ninja
-BuildRequires:	qt6-build >= %{qtver}
+BuildRequires:	qt5-build >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.164
 BuildRequires:	shared-mime-info
 BuildRequires:	tar >= 1:1.22
@@ -107,23 +107,22 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-%ghost %{_libdir}/libKDEGames6.so.6
-%attr(755,root,root) %{_libdir}/libKDEGames6.so.*.*
-%ghost %{_libdir}/libKDEGames6Private.so.6
-%attr(755,root,root) %{_libdir}/libKDEGames6Private.so.*.*
-%dir %{_libdir}/qt6/qml/org/kde/games
-%dir %{_libdir}/qt6/qml/org/kde/games/core
-%{_libdir}/qt6/qml/org/kde/games/core/KGameItem.qml
-%{_libdir}/qt6/qml/org/kde/games/core/corebindingsplugin.qmltypes
-%{_libdir}/qt6/qml/org/kde/games/core/kde-qmlmodule.version
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/games/core/libcorebindingsplugin.so
-%{_libdir}/qt6/qml/org/kde/games/core/qmldir
+%ghost %{_libdir}/libKF5KDEGames.so.7
+%attr(755,root,root) %{_libdir}/libKF5KDEGames.so.*.*.*
+%ghost %{_libdir}/libKF5KDEGamesPrivate.so.7
+%attr(755,root,root) %{_libdir}/libKF5KDEGamesPrivate.so.*.*.*
+%{_libdir}/qt5/qml/org/kde/games/core/KgItem.qml
+%dir %{_libdir}/qt5/qml/org/kde/games
+%dir %{_libdir}/qt5/qml/org/kde/games/core
+%attr(755,root,root) %{_libdir}/qt5/qml/org/kde/games/core/libcorebindingsplugin.so
+%{_libdir}/qt5/qml/org/kde/games/core/qmldir
 %{_datadir}/carddecks
-%{_datadir}/qlogging-categories6/libkdegames.categories
+%{_datadir}/kconf_update/kgthemeprovider-migration.upd
+%{_datadir}/qlogging-categories5/libkdegames.categories
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/KDEGames6
-%{_libdir}/cmake/KDEGames6
-%{_libdir}/libKDEGames6.so
-%{_libdir}/libKDEGames6Private.so
+%{_includedir}/KF5/KDEGames
+%{_libdir}/cmake/KF5KDEGames
+%{_libdir}/libKF5KDEGames.so
+%{_libdir}/libKF5KDEGamesPrivate.so
